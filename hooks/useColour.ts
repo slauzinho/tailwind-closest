@@ -4,7 +4,8 @@ import tailwindColours from '../utils/tailwindColours';
 import { isValidColour } from '../utils/colour';
 
 const useColour = (userColour: string) => {
-  const getNearestTailwindColour = nearestColour.from(tailwindColours);
+  const { inherit, current, transparent, ...rest } = tailwindColours;
+  const getNearestTailwindColour = nearestColour.from(rest);
 
   const test = useMemo(() => {
     if (isValidColour(userColour)) {

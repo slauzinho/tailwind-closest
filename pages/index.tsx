@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import useColour from '../hooks/useColour';
 
@@ -45,6 +46,15 @@ export default function Home() {
         />
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
+      <nav>
+        <div className="container flex justify-end px-4 mx-auto mt-4">
+          <Link href="/colours">
+            <a className="px-4 py-3 text-sm uppercase bg-gray-400 border rounded">
+              Colours file
+            </a>
+          </Link>
+        </div>
+      </nav>
 
       <main className="relative flex flex-col items-center min-h-screen">
         <div className="z-10 flex items-baseline justify-center w-full h-screen mt-10 lg:mt-0 lg:items-center">
