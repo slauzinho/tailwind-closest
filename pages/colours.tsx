@@ -9,7 +9,7 @@ const Colours = () => {
     if (copied) {
       timeoutRef.current = setTimeout(() => {
         setCopied(false);
-      }, 2000);
+      }, 4000);
     }
 
     return () => {
@@ -31,10 +31,30 @@ const Colours = () => {
       </div>
       <div className="flex justify-end">
         <button
-          className="px-4 py-3 mt-4 text-sm font-bold text-white uppercase rounded bg-slate-500"
+          className={`flex items-center px-4 py-3 mt-4 text-sm font-bold text-white uppercase rounded ${
+            copied ? 'bg-green-600' : 'bg-slate-500'
+          }`}
           onClick={copyToClipboard}
         >
-          Copy to clipboard
+          {copied && (
+            <div className="mr-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+          )}
+          {copied ? 'Copied!' : 'Copy to clipboard'}
         </button>
       </div>
     </div>
