@@ -11,7 +11,7 @@
     "nearest-color": "^0.4.4",
     "next": "12",
     "react": "^18.1.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.1.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.42",
